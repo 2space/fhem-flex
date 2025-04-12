@@ -47,8 +47,8 @@ body > :not(script) {
 	z-index: 9999;
 }
 #loadingOverlay svg {
-	max-width: 4em;
-	max-height: 4em;
+	max-width: 24em;
+	max-height: 24em;
 	margin: 10px;
 }
 #loadingOverlay > * {
@@ -372,8 +372,8 @@ li.ui-state-focus, .ui-menu li.ui-state-active {margin: unset!important;}
 }
 #content > table:first-child:not(.roomoverview) {table-layout: fixed; width: 100%; width: -webkit-fill-available;}
 #content > table > tbody > tr > td > br, #content > br {display:none;}
-/* Icons skalieren */
-#content svg:not([id^=SVGPLOT]):not(.zw_nr), #content img.icon, #content .col2 img{
+/* Icons skalieren Mod schwatter*/
+#content svg.icon, #content img.icon {
 	min-width: 1.35em;
 	max-width: 1.35em;
 	max-height: 1.35em;
@@ -381,6 +381,13 @@ li.ui-state-focus, .ui-menu li.ui-state-active {margin: unset!important;}
     margin-bottom: -0.1em;
 	vertical-align: middle;
 }
+
+/* Icons normalisieren - Mod schwatter */
+.odd svg, .even svg, td.wrapped svg, .col2 svg, .col3 svg, .SVGlabel svg, .roomoverview svg, td.containsTable svg, .ui-widget-content svg {
+    width: 30px;
+    height: 30px;
+}
+
 /* Hyperlink-Farbe */
 #content a { cursor: pointer; }
 
@@ -474,7 +481,8 @@ table.groupContent > tbody > tr {
 
 @media all and (max-width: 900px) {	
 	.odd td, .even td, .containsTable > table td { padding: 0.6em;	}
-	#content svg:not([id^=SVGPLOT]):not(.zw_nr), #content img.icon, #content .col2 img{
+        /* Icons skalieren Mod schwatter*/
+	#content svg.icon, #content img.icon {
 		min-width: 1.65em;
 		max-width: 1.65em;
 		max-height: 1.65em;
@@ -482,7 +490,13 @@ table.groupContent > tbody > tr {
 		margin-bottom: -0.25em;
 		vertical-align: middle;
 	}
+	/* Icons normalisieren - Mod schwatter */
+	.odd svg, .even svg, td.wrapped svg, .col2 svg, .col3 svg, .SVGlabel svg, .roomoverview svg, td.containsTable svg .ui-widget-content svg {
+  	  width: 30px;
+  	  height: 30px;
+	}
 }
+
 /* Erste Spalte immer fett */
 .odd > td:nth-child(1):not(.containsTable), .even > td:nth-child(1):not(.containsTable) { font-weight: bold; }
 .odd:not(.table) > td:nth-child(n+2):not(.containsTable), .even:not(.table) > td:nth-child(n+2):not(.containsTable) { font-weight: normal; overflow: hidden}
